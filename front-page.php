@@ -1,13 +1,17 @@
 <?php get_header(); 
 /* Template name: Front page*/
 ?>
-<div id="wrapper">
+<div id="hero">
+ <img src="https://jorlui11.dreamhosters.com/it270/wordpress/wp-content/uploads/Saltlickpit-scaled.jpg" alt="Banner">
+</div>
+
+<div class="wrapper">
 
 <?php if(have_posts()):?>
 
 <?php while(have_posts()): the_post() ;?>
 
-<h2><?php the_title() ;?></h2>
+
 
 <?php the_content();?>
 <?php endwhile; ?>

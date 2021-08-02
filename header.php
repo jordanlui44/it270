@@ -6,10 +6,11 @@
 
 <link href="<?php bloginfo('stylesheet_url');?>"
  rel="stylesheet" type="text/css">
+ <?php wp_enqueue_script('jquery'); ?>
 <?php wp_head();?>
 </head>
 
-<body <?php body_class();?>>
+<body <?php body_class(! is_front_page() ? "inner-page" :"");?>>
 <header>
 <div id="top">
     <?php 
