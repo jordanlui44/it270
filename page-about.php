@@ -1,5 +1,5 @@
 <?php get_header(); 
-/* Template name: bluesmoke page*/
+/* Template name: about page*/
 ?>
 <div id="hero">
 <img src="<?php echo get_template_directory_uri();?>/../../uploads/hot-dog-ketchup-mustard-isolated-white-background-hot-dog-ketchup-mustard-white-112613744.jpg">
@@ -24,15 +24,10 @@
 </main>
 
 <aside id="secondary" class ="widget-area">
-<?php dynamic_sidebar('sidebar-blue'); ?>
+<?php dynamic_sidebar('sidebar-about'); ?>
 </aside>
 
 </div>
 <!-- end wrapper -->
-<div class="full-width">
-<?php
-dynamic_sidebar('sidebar-buy');?>
-</div>
-<!-- end fullwidth div -->
-<?php
- get_footer(); ?>
+
+<?php get_footer(); ?>

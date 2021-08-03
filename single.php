@@ -1,5 +1,10 @@
 <?php get_header(); ?>
-<div id="wrapper">
+<div id="hero">
+<img src="<?php echo get_template_directory_uri();?>/../../uploads/hot-dog-ketchup-mustard-isolated-white-background-hot-dog-ketchup-mustard-white-112613744.jpg">
+
+</div>
+
+<div class="wrapper">
 <main>
 
 <?php if(have_posts()):?>
@@ -24,11 +29,14 @@
 <?php else: ?>
 <?php echo wpautop('Sorry, no posts were found'); ?>
 <?php endif; ?>
+
+<span class="next-previous">
+<?php (previous_post_link()) ? '%link' : ''; ?> &nbsp; &nbsp; <?php (next_post_link()) ? '%link' : ''; ?>
+</span>
 </main>
-<aside>
-
+<aside id="secondary" class ="widget-area">
+<?php dynamic_sidebar('sidebar-blog'); ?>
 </aside>
-
 </div>
 <!-- end wrapper -->
 

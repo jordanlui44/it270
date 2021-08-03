@@ -1,24 +1,19 @@
 <?php get_header(); ?>
-<div id="search-error">
-<img src="<?php echo get_template_directory_uri();?>/../../uploads/lost-sad-man-center-maze-d-illsuatration-51222661.jpg">
-</div>
+<div id="hero">
+<img src="<?php echo get_template_directory_uri();?>/../../uploads/hot-dog-ketchup-mustard-isolated-white-background-hot-dog-ketchup-mustard-white-112613744.jpg">
 
+</div>
 <div class="wrapper">
 <main>
+<h1 class="page-title">
+<?php _e( 'Category results for: ', 'jlui_summer_site' );
 
-<?php if(have_posts()):?>
-
-    <h1 class="page-title">
-<?php _e( 'Search results for: ', 'jlui_summer_site' ); ?>
-<span class="page-description"><?php echo get_search_query(); ?>
-</span>
-</h1>
-
-<h2 class="pagetitle">Our findings for 
-    <?php /* Search Count */ 
-    $allsearch = new WP_Query("s=$s&showposts=-1"); $key = wp_specialchars($s, 1); $count = $allsearch->post_count; _e(''); _e('<span class="search-terms">'); echo $key; _e('</span>'); _e(' &mdash; '); echo $count . ' '; _e('articles/pages'); wp_reset_query(); ?></h2>
+$categories = get_the_category();
+if (! empty($categories)){
+    echo esc_html ($categories[0]->name);
+} 
+?>
 <?php while(have_posts()): the_post() ;?>
-
 
 <article class="post">
 
@@ -55,13 +50,12 @@
 <p>Sorry, but nothing matched your search terms. <br>
 would you like to search again with different keywords?</p>';?>
 <?php get_search_form(); ?>
-<?php endif; ?>
+
 <!-- the search results originally is working off of the index.php page-->
 </main>
-<aside>
-
+<aside id="secondary" class ="widget-area">
+<?php dynamic_sidebar('sidebar-blog'); ?>
 </aside>
-
 </div>
 <!-- end wrapper -->
 
